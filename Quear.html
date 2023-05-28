@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>কিউ আর সিমুলেশন</title>
+    <script src="queue.js"></script>
+</head>
+<body>
+    <h1>কিউ আর সিমুলেশন</h1>
+    <button onclick="enqueue()">কিউতে যোগ করুন</button>
+    <button onclick="dequeue()">কিউ থেকে সরান</button>
+    <div id="queue"></div>
+    <script>
+    	// কিউ আর ক্লাস
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    // কিউতে যোগ করুন
+    enqueue(element) {
+        this.items.push(element);
+        this.displayQueue();
+    }
+
+    // কিউ থেকে সরান
+    dequeue() {
+        if (this.items.length === 0) {
+            console.log('কিউ খালি');
+        } else {
+            this.items.shift();
+            this.displayQueue();
+        }
+    }
+
+    // কিউটি প্রদর্শন করুন
+    displayQueue() {
+        const queueElement = document.getElementById('queue');
+        queueElement.innerHTML = '';
+
+        for (let i = 0; i < this.items.length; i++) {
+            queueElement.innerHTML += this.items[i] + ' ';
+        }
+    }
+}
+
+// নতুন কিউ আর অবজেক্ট তৈরি করুন
+const queue = new Queue();
+
+// কিউতে যোগ করার জন্য ক্লিক ইভেন্ট হ্যান্ডলার
+function enqueue() {
+    const element = prompt('আপনি কী যোগ করতে চান?');
+    queue.enqueue(element);
+}
+
+// কিউ থেকে সরানের জন্য ক্লিক ইভেন্ট হ্যান্ডলার
+function dequeue() {
+    queue.dequeue();
+}
+
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>কইওরকড জেনারেটর</title>
+    <script>
+        function generateKoiroCode() {
+            // এখানে কইওরকড তৈরির কোড লিখুন
+            var koiroCode = "কইওরকড এখানে থাকবে";
+            
+            // কইওরকড ডিসপ্লে করুন
+            document.getElementById("koiroCodeOutput").innerText = koiroCode;
+        }
+    </script>
+</head>
+<body>
+    <h1>কইওরকড জেনারেটর</h1>
+    
+    <button onclick="generateKoiroCode()">কইওরকড তৈরি করুন</button>
+    
+    <div id="koiroCodeOutput"></div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>কইওরকড জেনারেটর</title>
+    <script>
+        function generateKoiroCode() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            
+            var koiroCode = "কইওরকড: " + firstName + " " + lastName;
+            
+            document.getElementById("koiroCodeOutput").innerText = koiroCode;
+        }
+    </script>
+</head>
+<body>
+    <h1>কইওরকড জেনারেটর</h1>
+    
+    <label for="firstName">নামের প্রথম অংশ:</label>
+    <input type="text" id="firstName">
+    
+    <label for="lastName">নামের শেষ অংশ:</label>
+    <input type="text" id="lastName">
+    
+    <button onclick="generateKoiroCode()">কইওরকড তৈরি করুন</button>
+    
+    <div id="koiroCodeOutput"></div>
+</body>
+</html>
